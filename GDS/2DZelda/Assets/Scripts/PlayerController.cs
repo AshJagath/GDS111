@@ -26,9 +26,10 @@ public class PlayerController : MonoBehaviour {
 		HInput = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		VInput = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 	
-		gameObject.transform.position += Vector3.up * VInput;
-		gameObject.transform.position += Vector3.right * HInput;
+		rigidbody2D.AddForce (Vector2.up * VInput);
+		rigidbody2D.AddForce (Vector2.right * HInput);
 
+		//rigidbody.velocity.magnitude += -1 ;
 	}
 
 	void Move(){
