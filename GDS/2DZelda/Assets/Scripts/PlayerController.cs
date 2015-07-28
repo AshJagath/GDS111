@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
+
+
 	}
 
 
@@ -26,8 +29,10 @@ public class PlayerController : MonoBehaviour {
 		HInput = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		VInput = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 	
-		rigidbody2D.AddForce (Vector2.up * VInput);
-		rigidbody2D.AddForce (Vector2.right * HInput);
+
+
+		rigidbody2D.MovePosition (new Vector2(transform.position.x + HInput, transform.position.y + VInput));
+		//igidbody2D.MovePosition (Vector2.right * HInput);
 
 		//rigidbody.velocity.magnitude += -1 ;
 	}
